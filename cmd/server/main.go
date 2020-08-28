@@ -1,28 +1,60 @@
 package main
 
 import (
-	"fmt"
-	"log"
 	"net/http"
+
+	"github.com/johnhckuo/Crawler/pkg/crawler/riven"
+	RM "github.com/johnhckuo/Crawler/pkg/crawler/riven/riven.market"
 )
 
 func main() {
 
-	mux := http.NewServeMux()
+	// starting server
+	/*
+		mux := http.NewServeMux()
 
-	mux.HandleFunc("/", homeHandler)
-	mux.HandleFunc("/contact", contactHandler)
+		mux.HandleFunc("/", homeHandler)
+		mux.HandleFunc("/contact", contactHandler)
 
-	log.Println(fmt.Sprintf("Server running on http://localhost%s 🐹", ":4000"))
-	err := http.ListenAndServe(":4000", mux)
-	if err != nil {
-		log.Fatalf("could not run the server %v", err)
-		return
-	}
+		log.Println(fmt.Sprintf("Server running on http://localhost%s 🐹", ":4000"))
+		err := http.ListenAndServe(":4000", mux)
+		if err != nil {
+			log.Fatalf("could not run the server %v", err)
+			return
+		}
+	*/
+	handler()
 }
 
+// listen to request
+/*
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello from home handler"))
+
+	// validation
+
+	// get riven prices
+
+	targetWeapon := "Grakata"
+	var crawler riven.Crawler = &RM.Crawler{}
+	crawler.GetRivenByWeapon(&targetWeapon)
+
+	w.Write([]byte("sss"))
+
+}
+*/
+
+func handler() {
+
+	// validation
+
+	// get riven prices
+
+	targetWeapon := "Grakata"
+	var crawler riven.Crawler = &RM.Crawler{}
+	crawler.GetRivenByWeapon(&targetWeapon)
+
+	//w.Write([]byte("sss"))
+
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
