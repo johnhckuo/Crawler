@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/johnhckuo/Crawler/pkg/crawler/riven"
-	RM "github.com/johnhckuo/Crawler/pkg/crawler/riven/riven.market"
+	"github.com/johnhckuo/Crawler/pkg/crawler/warframe"
+	RM "github.com/johnhckuo/Crawler/pkg/crawler/warframe/riven.market"
 )
 
 func main() {
@@ -50,7 +50,7 @@ func handler() {
 	// get riven prices
 
 	targetWeapon := "Grakata"
-	var crawler riven.Crawler = &RM.Crawler{}
+	var crawler warframe.Crawler = &RM.Crawler{}
 	crawler.GetRivenByWeapon(&targetWeapon)
 
 	//w.Write([]byte("sss"))
